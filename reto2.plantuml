@@ -187,5 +187,63 @@ alto acoplamiento entre los paquetes? ¿Esto es bueno o malo?
 Este diagrama muestra un código con alto acoplamiento entre los paquetes, esto es malo porque al realizar cambios en alguno de los paquetes los demás que dependen de él podrían necesitar ajustes, por lo que dificulta su mantenimiento y tiene poca flexibilidad.
 '/
 'Ejercicio f
+class EquipoVoleyball{
++nombre
++registro
+}
+class Persona{
++telefono
++nombre
++direccion
+}
+class Jugador{
++numero
++posicion
+}
+class Capitan{}
+class Entrenador{
++nivel_acreditacion
++años_experiencia
+}
+class Juegos{
++localidad
++puntuacion
+}
+EquipoVoleyball "6...20" o-- Jugador
+Jugador ^-- Capitan
+Persona ^-- Jugador
+Persona ^-- Capitan
+Persona ^-- Entrenador
+EquipoVoleyball o-- "1..*" Entrenador
+EquipoVoleyball "Compite" -- Juegos
+object EquipVoleyball{
++nombre: Venezuela
++registro: 1564
+}
+object Person{
++telefono:04241569785
++nombre: Jose
++direccion: El Valle
+}
+object Player{
++numero: 10
++posicion: Delantero
+}
+object Entrenadorr{
++nivel_acreditacion: Avanzado
++años_experiencia: 20
+}
+object Juegoss{
++localidad: Chile
++puntuacion: 15 
+}
+object Capitann
+EquipVoleyball "6...20" o-- Player 
+Player ^-- Capitann
+Person ^-- Player 
+Person ^-- Capitann
+Person ^-- Entrenadorr
+EquipVoleyball o-- "1..*" Entrenadorr
+EquipVoleyball "Compite" -- Juegoss
 
 @enduml
